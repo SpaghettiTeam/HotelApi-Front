@@ -1,0 +1,153 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(90, 85, 85);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+header {
+  background: #2d3033;
+  color: white;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: 3px solid rgb(172, 153, 48);
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+
+}
+
+header li {
+  display: inline;
+  padding: 0 20px;
+}
+
+#branding {
+  float: left;
+
+}
+
+#branding h1 {
+  margin: 0;
+  padding-bottom: 3px;
+
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+.hightlight {
+  color: rgb(172, 153, 48);
+  font-weight: bold;
+}
+
+header a:hover {
+  font-weight: bold;
+  color: rgb(172, 153, 48);
+}
+
+#showcase {
+  background: url("hotel1.jpg") no-repeat;
+  /* background-image: url("hotel.jpg"); */
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  height: 80vh;
+  color: white;
+}
+
+#showcase {
+  margin-top: 5px;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+#newsletter {
+  padding: 15px;
+  color: white;
+  background: lightgray;
+}
+
+#newsletter h1 {
+  float: left;
+}
+
+#newsletter form {
+  float: right;
+  margin-top: 15px;
+}
+
+#newsletter input[type="text"] {
+  padding: 4px;
+  width: 250px;
+  height: 25px;
+}
+
+#newsletter input[type="number"] {
+  padding: 4px;
+  width: 250px;
+  height: 25px;
+}
+
+#newsletter input[type="email"] {
+  padding: 4px;
+  width: 250px;
+  height: 25px;
+}
+
+.button1 {
+  height: 37px;
+  background: rgb(172, 153, 48);
+  border: 0;
+  outline: 0;
+  padding: 0 20px;
+  color: white;
+  border-radius: 2em;
+}
+
+#p {
+  text-align: center;
+}
+
+#boxes {
+  margin-top: 20px;
+
+}
+
+.box {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+}
+
+.box i {
+  font-size: 50px;
+}
+
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+  background-color: #2d3033;
+  text-align: center;
+}
