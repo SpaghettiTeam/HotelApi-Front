@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.5em;
+   padding: 0;
+  margin: 0;
+  background-color: rgb(90, 85, 85);
+}
