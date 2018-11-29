@@ -1,12 +1,23 @@
 <section id="showcase">
   <div class="container">
     <h1>O Nas</h1>
-    <p>Idealne miejsce na wypoczynek, podróż służbową i relax w SPA</p>
+    <p>Idealne miejsce na wypoczynek oraz podroz sluzbowa. </p>
     <h5>REZERWACJA ONLINE</h5>
     <label for="tripDate">Przyjazd</label>
     <input type="date" name="tripDate" id="tripDate" tabindex="50">
     <label for="tripDate">Wyjazd</label>
     <input type="date" name="tripDate" id="tripDate" tabindex="50">
+    <label for="chooseRoom">Rodzaj Pokoju:</label>
+      <input list="room" name="room">
+      <datalist id="room">
+        <option value="1-Osobowy">
+        <option value="2-Osobowy">
+        <option value="3-Osobowy">
+        <option value="4-Osobowy">
+
+      </datalist>
+
+
     <button type="submit" class="button1">Zarezerwuj</button>
   </div>
 </section>
