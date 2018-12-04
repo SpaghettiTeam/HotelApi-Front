@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hotel';
+  dogs = new Array<Dog>();
+  constructor() {
+    this.dogs.push(new Dog('Karol', 4), new Dog('Szymon', 5));
+  }
+
+
 }
+  class Dog {
+    constructor(public name: string, public age: number) {
+      }
+    }
