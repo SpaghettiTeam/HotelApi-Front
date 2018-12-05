@@ -1,20 +1,18 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'hotel';
-  dogs = new Array<Dog>();
+  title = "hotel";
+
+  // dogs = new Array<Dog>();
   constructor() {
-    this.dogs.push(new Dog('Karol', 4), new Dog('Szymon', 5));
+    // this.dogs.push(new Dog("Karol", 4), new Dog("Szymon", 5));
   }
-
-
 }
-  class Dog {
-    constructor(public name: string, public age: number) {
-      }
-    }
+//  export class Dog {
+//   constructor(public name: string, public age: number) {}
+// }
