@@ -5,7 +5,7 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  clientID: "50Kb7NK2OEFJPTcjSZMgx1evRBUWa-6p",
-  domain: "tttest.eu.auth0.com",
-  callbackURL: "http://localhost:4200/callback"
+  clientID: 'Y13Hc9Y7yTw9Px5QpiWd650YzpHyOBr2',
+  domain: 'tttest.eu.auth0.com',
+  callbackURL: 'http://localhost:4200/callback'
 };
