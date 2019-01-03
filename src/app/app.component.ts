@@ -12,15 +12,7 @@ export class AppComponent implements OnInit {
     auth.handleAuthentication();
   }
 
-  inputText = 'tekst';
-  maxLenght = 5;
-  colorClass = 'color';
 
-  change() {
-    this.inputText = ' zmiana tekstu';
-    this.maxLenght = 10;
-    this.colorClass = 'color2';
-  }
 
 
 
