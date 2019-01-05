@@ -1,3 +1,4 @@
+import { HttpService } from './http.service';
 import { TestComponent } from './test/test.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
@@ -13,6 +14,7 @@ import { ROUTES } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
+import { Observable } from 'rxjs/Observable';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { CallbackComponent } from './callback/callback.component';
     FooterComponent,
     TestComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -31,8 +34,10 @@ import { CallbackComponent } from './callback/callback.component';
     HttpModule,
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
+
+
   ],
-  providers: [AuthService],
+  providers: [AuthService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

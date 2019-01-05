@@ -2,7 +2,6 @@
 import { IPlaceholder } from './../iplaceholder';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import {Dog} from '../app.component';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -23,3 +22,4 @@ export class TestComponent implements OnInit {
   }
 
 }
+// https://jsonplaceholder.typicode.com/posts
