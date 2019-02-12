@@ -1,31 +1,39 @@
-import { HeaderComponent } from './header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainVievComponent } from './main-viev/main-viev.component';
+import { HeaderComponent } from './header/header.component';
+import { ContactComponent } from './contact/contact.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { PriceListComponent } from './price-list/price-list.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { HomeComponent } from './home/home.component';
-
-import { ROUTES } from './app.routes';
-
-import { AuthService } from './auth/auth.service';
-import { CallbackComponent } from './callback/callback.component';
-
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MainVievComponent,
+    HeaderComponent,
+    ContactComponent,
+    GalleryComponent,
+    PriceListComponent,
     HomeComponent,
-    CallbackComponent,
-    HeaderComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot(ROUTES)
+    AppRoutingModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class AppBootstrapModule {}
