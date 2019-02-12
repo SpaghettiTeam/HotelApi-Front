@@ -4,8 +4,10 @@ import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PriceListComponent } from './price-list/price-list.component';
 import { HomeComponent } from './home/home.component';
+import { CallbackComponent } from './callback/callback.component';
 
-const routes: Routes = [
+
+ export const routes: Routes = [
 {
   path: 'price-list',
   component: PriceListComponent
@@ -21,7 +23,18 @@ const routes: Routes = [
 {
  path: 'home',
  component: HomeComponent
+},
+{
+   path: '', component: HomeComponent
+},
+{
+    path: 'callback', component: CallbackComponent
+},
+{
+     path: '**', redirectTo: ''
 }
+
+
 
 ];
 

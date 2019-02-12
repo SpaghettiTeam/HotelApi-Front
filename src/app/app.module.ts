@@ -1,7 +1,9 @@
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { Observable, Subject, pipe } from 'rxjs';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainVievComponent } from './main-viev/main-viev.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +15,10 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule, ROUTES } from '@angular/router';
+import { AuthService } from './auth/auth.service';
+import { CallbackComponent } from './callback/callback.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,9 @@ import { FooterComponent } from './footer/footer.component';
     GalleryComponent,
     PriceListComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CallbackComponent
+
   ],
   imports: [
     BrowserModule,
@@ -30,9 +38,12 @@ import { FooterComponent } from './footer/footer.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
