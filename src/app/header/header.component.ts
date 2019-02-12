@@ -1,4 +1,6 @@
+import { AuthService } from './../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+
 import { AppRoutingModule } from '../app-routing.module';
 
 @Component({
@@ -8,9 +10,14 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) {
+    auth.handleAuthentication();
+   }
 
   ngOnInit() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      this.auth.renewTokens();
+    }
   }
 
 }

@@ -11,10 +11,11 @@ export class AuthService {
   private _expiresAt: number;
 
   auth0 = new auth0.WebAuth({
-    clientID: AUTH_CONFIG.clientID,
-    domain: AUTH_CONFIG.domain,
+    clientID: 'Y13Hc9Y7yTw9Px5QpiWd650YzpHyOBr2',
+    domain: 'tttest.eu.auth0.com',
     responseType: 'token id_token',
-    redirectUri: AUTH_CONFIG.callbackURL
+    redirectUri: 'http://localhost:4200/callback',
+    scope: 'openid'
   });
 
   constructor(public router: Router) {
