@@ -1,8 +1,8 @@
 export class Form {
-  constructor(
-    public startDate: string,
-    public endDate: string,
-    public lowestPrice: string,
-    public highest: string
-  ) {}
+
+    public startDate: string;
+    public endDate: string;
+    public lowestPrice: number;
+    public highest: number;
+
 }

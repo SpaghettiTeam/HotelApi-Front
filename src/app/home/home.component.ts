@@ -1,5 +1,7 @@
+import { RoomService } from './../room/room.service';
 import { Component, OnInit } from '@angular/core';
 import { Form } from '../form';
+
 
 @Component({
   selector: 'app-home',
@@ -8,15 +10,19 @@ import { Form } from '../form';
 })
 export class HomeComponent implements OnInit {
   prices: string[] = ['30', '40', '50', '60'];
-  formModel = new Form('2019-02-08', '2019-02-09', '30', '30');
-  constructor() { }
+  formModel = new Form();
+  constructor(private roomService: RoomService) { }
 
   ngOnInit() {
   }
 
 
   onSubmit() {
-    console.log(this.formModel);
+    this.roomService.sendForm(this.formModel)
+    .subscribe(
+      data => console.log('success', data),
+      error => console.log('error', error)
+    );
   }
 
 }
