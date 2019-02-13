@@ -17,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule, ROUTES } from '@angular/router';
 import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
-
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,7 @@ import { CallbackComponent } from './callback/callback.component';
     ModalModule.forRoot(),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
 
   ],
   providers: [AuthService],

@@ -1,7 +1,11 @@
 <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark sticky-top" id="banner">
     <div class="container">
     <!-- Brand -->
-    <a routerLink="/home" class="btn btn-dark">Hotel</a>
+    <button
+          class="btn btn-primary btn-margin"
+          routerLink="/">
+            Home
+    </button>
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -20,45 +24,25 @@
         <li class="nav-item">
          <a routerLink="/contact" class="btn btn-dark">Kontakt</a>
         </li>
+        <li>
+          <button
+          class="btn btn-primary btn-margin"
+          *ngIf="!auth.isAuthenticated()"
+          (click)="auth.login()">
+            Log In
+        </button>
+        </li>
+        <li>
+          <button
+          class="btn btn-primary btn-margin"
+          *ngIf="auth.isAuthenticated()"
+          (click)="auth.logout()">
+            Log Out
+        </button>
+        </li>
        <!-- Dropdown -->
       </ul>
       </div>
     </div>
 
   </nav>
-
-
-
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Auth0 - Angular</a>
-
-        <button
-          class="btn btn-primary btn-margin"
-          routerLink="/">
-            Home
-        </button>
-
-        <button
-          class="btn btn-primary btn-margin"
-          *ngIf="!auth.isAuthenticated()"
-          (click)="auth.login()">
-            Log In
-        </button>
-
-        <button
-          class="btn btn-primary btn-margin"
-          *ngIf="auth.isAuthenticated()"
-          (click)="auth.logout()">
-            Log Out
-        </button>
-
-      </div>
-    </div>
-  </nav>
-
-  <main class="container">
-    <router-outlet></router-outlet>
-  </main>
-
