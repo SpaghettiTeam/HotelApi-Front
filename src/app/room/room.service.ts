@@ -14,8 +14,11 @@ export class RoomService {
 
   url = ' ';
   getRoom(): Observable<Array<Room>> {
-    return this.http.get<Array<Room>>('');
+    return this.http.get<Array<Room>>('http://hotelapii-backend.herokuapp.com/api/room/all');
   }
+
+
+
   sendForm(form: Form) {
     return this.http.post<any>(this.url, form );
 }

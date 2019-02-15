@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  getRoom() {
+    return this.roomService.getRoom().subscribe(rooms =>
+      console.log(rooms));
+  }
 
   onSubmit() {
     this.roomService.sendForm(this.formModel)
@@ -23,6 +27,7 @@ export class HomeComponent implements OnInit {
       data => console.log('success', data),
       error => console.log('error', error)
     );
+    console.log(this.formModel);
   }
 
 }
