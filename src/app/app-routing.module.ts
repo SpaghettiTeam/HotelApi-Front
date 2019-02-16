@@ -4,6 +4,8 @@ import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PriceListComponent } from './price-list/price-list.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CallbackComponent } from './callback/callback.component';
 
 const routes: Routes = [
 {
@@ -21,7 +23,19 @@ const routes: Routes = [
 {
  path: 'home',
  component: HomeComponent
-}
+},
+{
+  path: 'profile',
+  component: ProfileComponent
+},
+{
+  path: '',
+  component: HomeComponent
+},
+{
+  path: 'callback',
+  component: CallbackComponent
+},
 
 ];
 

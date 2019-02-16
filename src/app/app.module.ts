@@ -1,3 +1,4 @@
+import { AuthService } from './auth0/auth0.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +17,10 @@ import { FooterComponent } from './footer/footer.component';
 import { RoomService } from './room/room.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+import { CallbackComponent } from './callback/callback.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     GalleryComponent,
     PriceListComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
 
   ],
-  providers: [RoomService],
+  providers: [RoomService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
