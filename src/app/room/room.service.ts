@@ -20,7 +20,7 @@ export class RoomService {
   temp(): void {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + this.auth0.idToken
+        'Authorization': 'Bearer ' + this.auth0.accessToken
       })
     };
     console.log(httpOptions);

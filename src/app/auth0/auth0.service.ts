@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as auth0 from 'auth0-js';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
+import { AUTH_CONFIG } from './auth0-variables';
 
 @Injectable()
 export class AuthService {
@@ -13,12 +14,14 @@ export class AuthService {
   url = 'http://hotelapii-backend.herokuapp.com/api/logged';
 
   auth0 = new auth0.WebAuth({
-    clientID: 'Y13Hc9Y7yTw9Px5QpiWd650YzpHyOBr2',
-    domain: 'tttest.eu.auth0.com',
+    clientID: AUTH_CONFIG.clientID,
+    domain: AUTH_CONFIG.domain,
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid'
+    redirectUri: AUTH_CONFIG.callbackURL,
+    scope: 'openid profile'
   });
+
+  userProfile: any;
 
   constructor(public router: Router, private http: HttpClient) {
     this._idToken = '';
@@ -41,18 +44,32 @@ export class AuthService {
 
     this.auth0.parseHash((err: auth0.Auth0Error, authResult: auth0.Auth0DecodedHash) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
-        window.location.hash = '';
+        console.log(authResult);
+        // window.location.hash = '';
         this.localLogin(authResult);
-        this.sendTokenToBase(authResult);
+        // this.sendTokenToBase(authResult);
         // this.sendTokenToBase(<IAccessToken>authResult);
         this.router.navigate(['/home']);
       } else if (err) {
         this.router.navigate(['/home']);
         console.log(err);
+        console.log(`Error: ${err.error}. Check the console for further details.`);
       }
     });
   }
+  public getProfile(cb): void {
+    if (!this._accessToken) {
+      throw new Error('Access token must exist to fetch profile');
+    }
 
+    const self = this;
+    this.auth0.client.userInfo(this._accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
+      }
+      cb(err, profile);
+    });
+  }
   private localLogin(authResult): void {
     // Set isLoggedIn flag in localStorage
     localStorage.setItem('isLoggedIn', 'true');
