@@ -2,7 +2,7 @@ import { IAccessToken } from './IAccessToken';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as auth0 from 'auth0-js';
-import { HttpParams, HttpClient } from '@angular/common/http';
+import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +10,7 @@ export class AuthService {
   private _idToken: string;
   private _accessToken: string;
   private _expiresAt: number;
-  url = 'http://hotelapii-backend.herokuapp.com/api/accessToken';
+  url = 'http://hotelapii-backend.herokuapp.com/api/logged';
 
   auth0 = new auth0.WebAuth({
     clientID: 'Y13Hc9Y7yTw9Px5QpiWd650YzpHyOBr2',
@@ -93,7 +93,12 @@ export class AuthService {
 
   private sendTokenToBase(authResult: auth0.Auth0DecodedHash) {
     console.log(authResult);
-    return this.http.post<any>(this.url, authResult );
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.accessToken
+      })
+    };
+    return this.http.post<any>(this.url, authResult, httpOptions);
   }
 
 }

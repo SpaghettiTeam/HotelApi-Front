@@ -20,7 +20,9 @@ export class HomeComponent implements OnInit {
     return this.roomService.getRoom().subscribe(rooms =>
       console.log(rooms));
   }
-
+  temp() {
+    this.roomService.temp();
+  }
   onSubmit() {
     this.roomService.sendForm(this.formModel)
     .subscribe(
