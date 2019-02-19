@@ -1,5 +1,6 @@
+import { Room } from './../room/IRoom';
 import { RoomService } from './../room/room.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { Form } from '../form';
 
 
@@ -13,13 +14,17 @@ export class HomeComponent implements OnInit {
   formModel = new Form();
   constructor(private roomService: RoomService) { }
 
+  data: Room[] = [];
   ngOnInit() {
   }
 
   getRoom() {
-    return this.roomService.getRoom().subscribe(rooms =>
-      console.log(rooms));
+    return this.roomService.getRoom().subscribe(rooms => {
+      this.data = rooms;
+    });
   }
+
+
 
   onSubmit() {
     this.roomService.sendForm(this.formModel)

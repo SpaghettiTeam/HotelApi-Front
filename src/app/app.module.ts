@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { CallbackComponent } from './callback/callback.component';
+import { ListOfRoomsComponent } from './list-of-rooms/list-of-rooms.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CallbackComponent } from './callback/callback.component';
     HomeComponent,
     FooterComponent,
     ProfileComponent,
-    CallbackComponent
+    CallbackComponent,
+    ListOfRoomsComponent
   ],
   imports: [
     BrowserModule,

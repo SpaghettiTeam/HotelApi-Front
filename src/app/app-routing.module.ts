@@ -6,6 +6,7 @@ import { PriceListComponent } from './price-list/price-list.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CallbackComponent } from './callback/callback.component';
+import { ListOfRoomsComponent } from './list-of-rooms/list-of-rooms.component';
 
 const routes: Routes = [
 {
@@ -35,6 +36,10 @@ const routes: Routes = [
 {
   path: 'callback',
   component: CallbackComponent
+},
+{
+  path: 'rooms',
+  component: ListOfRoomsComponent
 },
 
 ];

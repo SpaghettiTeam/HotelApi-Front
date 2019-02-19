@@ -1,0 +1,28 @@
+#room img {
+  position: relative;
+  text-align: center;
+  color: white;
+  transition: .3s;
+}
+#room:hover img{
+  filter:blur(2px)
+  brightness(60%)
+}
+#room :not(img) {
+  opacity: 0;
+}
+#room:hover :not(img) {
+  opacity: 1;
+}
+
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:blue;
+}
+
+.img-fluid {
+  padding: 10px;
+}

@@ -1,0 +1,29 @@
+<div class="row">
+    <div id="room" class="col-md-4"  *ngFor="let room of listOfRooms"> <img [src]="image" class="img-fluid" height=auto; width='350px;'>
+
+      <div  class="centered" >
+        <p lass="text-center">
+            ID:{{room.id}}
+        </p>
+        <p lass="text-center">
+            Cena:{{room.pricePerDay}}
+        </p>
+        <p lass="text-center">
+             Numer:{{room.roomNumber}}
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+<!--
+  <div id="room" *ngFor="let room of listOfRooms"  class="list-group-item">
+
+
+     {{room.id}}
+    {{room.pricePerDay}}
+    {{room.roomNumber}}
+
+    </div> -->
+
+
