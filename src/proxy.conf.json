@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://192.168.0.101:49182",
+    "target": "http://hotelapi-backend.herokuapp.com",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

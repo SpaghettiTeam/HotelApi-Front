@@ -1,6 +1,6 @@
 import { Room } from './IRoom';
 export class SingleRoom {
-  roomId: number;
+  id: number;
   photoLink: string;
   pricePerDay: number;
   rating: number;

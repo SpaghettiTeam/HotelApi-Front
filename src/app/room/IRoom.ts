@@ -1,5 +1,5 @@
 export class Room {
-  roomId: number;
+  id: number;
   photoLink: string;
   pricePerDay: number;
   rating: number;
