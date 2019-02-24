@@ -1,3 +1,4 @@
+import { SingleRoom } from './../room/ISingleRoomDescription';
 import { RoomService } from './../room/room.service';
 import { Room } from './../room/IRoom';
 import { Component, OnInit, Input } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListOfRoomsComponent implements OnInit {
 
-  constructor(private http: RoomService) { }
+  constructor(private roomService: RoomService) { }
 
 
 
@@ -18,9 +19,10 @@ export class ListOfRoomsComponent implements OnInit {
 
   image: any = 'https://unsplash.it/600/400';
 
-
-
-
   ngOnInit() {
   }
+
+
+
+
 }

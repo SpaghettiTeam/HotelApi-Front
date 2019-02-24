@@ -1,3 +1,4 @@
+import { SingleRoomVievComponent } from './single-room-viev/single-room-viev.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
@@ -41,6 +42,11 @@ const routes: Routes = [
   path: 'rooms',
   component: ListOfRoomsComponent
 },
+{
+  path: 'room/:id',
+  component: SingleRoomVievComponent
+},
+
 
 ];
 

@@ -39,11 +39,11 @@ export class HomeComponent implements OnInit {
 
     // const form = JSON.stringify(this.formModel);
     this.roomService.sendForm(this.formModel)
-    .subscribe(
-      data => {console.log('success', data);
-    this.data = data},
-      error => console.log('error', error)
-    );
+      .subscribe(
+        data => {console.log('success', data);
+      this.data = data},
+        error => console.log('error', error)
+      );
     console.log(this.formModel);
   }
 

@@ -24,7 +24,7 @@ export class RoomService {
   }
 
   getSingleRoom(id: number): Observable<SingleRoom>{
-    return this.http.get<SingleRoom>('https://hotelapi-backend.herokuapp.com/api/room/test1');
+    return this.http.get<SingleRoom>(`http://localhost:4200/api/values/${id}`);
   }
 
 
