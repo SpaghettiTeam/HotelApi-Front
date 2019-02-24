@@ -1,6 +1,6 @@
 export class Room {
-  id: number;
-  roomNumber: number;
+  roomId: number;
+  photoLink: string;
   pricePerDay: number;
-
+  rating: number;
 }

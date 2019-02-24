@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "hotel": "hotelapi-front",
+    "default": "hotelapi-front"
+  }
+}

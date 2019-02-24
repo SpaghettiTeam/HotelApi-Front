@@ -23,8 +23,8 @@
     <div class="form-group col-md-3">
         <label for="lowestPrice">State</label>
         <select id="lowestPrice" class="form-control" name="lowestPrice"[(ngModel)]="formModel.lowestPrice">
-            <option selected>Dolna cena za dobe:</option>
             <option *ngFor='let price of prices'>{{price}}</option>
+            <option selected>500</option>
         </select>
       </div>
 
@@ -34,9 +34,9 @@
 
       <div class="form-group col-md-3">
           <label for="highestPrice">S</label>
-          <select id="highestPrice" class="form-control"  name="highestPrice" [(ngModel)]="formModel.highest">
-            <option selected>Gorna cena za dobe:</option>
+          <select id="highestPrice" class="form-control"  name="highestPrice" [(ngModel)]="formModel.highestPrice">
             <option *ngFor='let price of prices'>{{price}}</option>
+            <option selected>500</option>
 
           </select>
         </div>
@@ -54,4 +54,6 @@
   </div>
 
 </form>
-<app-list-of-rooms [listOfRooms]=data ></app-list-of-rooms>
+<button (click)="getSingleRoom()" type="button" class="btn btn-primary mb-2"></button>
+<app-list-of-rooms [listOfRooms]=data></app-list-of-rooms>
+

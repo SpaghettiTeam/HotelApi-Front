@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ListOfRoomsComponent } from './list-of-rooms/list-of-rooms.component';
+import { SingleRoomVievComponent } from './single-room-viev/single-room-viev.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ListOfRoomsComponent } from './list-of-rooms/list-of-rooms.component';
     FooterComponent,
     ProfileComponent,
     CallbackComponent,
-    ListOfRoomsComponent
+    ListOfRoomsComponent,
+    SingleRoomVievComponent
   ],
   imports: [
     BrowserModule,

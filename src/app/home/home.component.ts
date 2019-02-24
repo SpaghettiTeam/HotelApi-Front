@@ -2,6 +2,8 @@ import { Room } from './../room/IRoom';
 import { RoomService } from './../room/room.service';
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { Form } from '../form';
+import { json } from 'body-parser';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -20,16 +22,26 @@ export class HomeComponent implements OnInit {
 
   getRoom() {
     return this.roomService.getRoom().subscribe(rooms => {
-      this.data = rooms;
+      this.data.push(rooms);
+      console.log(this.data);
+    });
+  }
+
+  getSingleRoom() {
+    return this.roomService.getSingleRoom(1).subscribe(room => {
+      console.log(room);
     });
   }
 
 
 
   onSubmit() {
+
+    // const form = JSON.stringify(this.formModel);
     this.roomService.sendForm(this.formModel)
     .subscribe(
-      data => console.log('success', data),
+      data => {console.log('success', data);
+    this.data = data},
       error => console.log('error', error)
     );
     console.log(this.formModel);
