@@ -1,16 +1,53 @@
-<form #tripInfo="ngForm" (ngSubmit)="onSubmit()"  novalidate>
-    <!-- {{tripInfo.value | json}}
-    {{formModel | json}} -->
-  <div class="form-row align-items-center">
+
+<div class="container-fluid">
+    <div class="row">
+
+  <div class="col-2">
+    <ul class="">
+        <li class=" active list-group-item">    <a href="#!">   <span><i class="fas fa-home"></i> Home </span> </a>  </li>
+        <li class=" list-group-item">     <a href="#!">    <span><i class="fas fa-search"></i> Wyszukaj</span>  </a> </li>
+        <li class=" list-group-item"> <a href="#!">     <span><i class="fas fa-sign-in-alt"></i> Logowanie</span>  </a> </li>
+
+
+            <a href="#Profil" class="list-group-item dropdown-toggle" data-toggle="collapse" aria-expanded="false" ><i class="fas fa-user"></i>Uzytwkonik </a>
+            <ul class="collapse list-unstyled" id="Profil">
+              <li class="list-group-item">
+                      <a href="#">Twoj profil 1</a>
+                    </li >
+                    <li class="list-group-item">
+                      <a href="#">Historia 1</a>
+                      </li >
+                      <li class="list-group-item">
+                        <a href="#">Cos 1</a>
+                    </li>
+                  </ul>
+
+
+
+
+
+          <a href="#!">  <li class=" list-group-item">   <span><i class="fas fa-phone"></i> Kontakt </span> </li>  </a>
+          <a href="#!">  <li class=" list-group-item">   <span><i class="fas fa-images"></i> Galeria </span>  </li> </a>
+          <a href="#!">  <li class=" list-group-item">   <span><i class="fas fa-list-alt"></i> Lista Pokoi </span>  </li> </a>
+        </ul>
+      </div>
+
+
+      <div class="col-md-10">
+<form #tripInfo="ngForm" (ngSubmit)="onSubmit()"  novalidate> -->
+   <!-- {{tripInfo.value | json}}
+    {{formModel | json}}  -->
+   <div class="form-row align-items-center">
     <div class="col-auto">
       <label class="sr-only" for="inlineFormInput">Name</label>
       <input type="date" class="form-control mb-2" id="startDate" name="startDate" [(ngModel)]="formModel.startDate">
     </div>
 
+    </div>
 
     <div class="col-auto">
       <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
+      <div class="input-group ">
         <div class="input-group-prepend">
 
         </div>
@@ -20,19 +57,19 @@
 
 
 
-    <div class="form-group col-md-3">
+    <div class="form-group ">
         <label for="lowestPrice">State</label>
         <select id="lowestPrice" class="form-control" name="lowestPrice"[(ngModel)]="formModel.lowestPrice">
             <option *ngFor='let price of prices'>{{price}}</option>
             <option selected>500</option>
         </select>
-      </div>
 
 
 
 
 
-      <div class="form-group col-md-3">
+
+      <div class="form-group ">
           <label for="highestPrice">S</label>
           <select id="highestPrice" class="form-control"  name="highestPrice" [(ngModel)]="formModel.highestPrice">
             <option *ngFor='let price of prices'>{{price}}</option>
@@ -45,12 +82,15 @@
 
 
 
-    <div class="col-auto">
+    <div >
       <button type="submit" class="btn btn-primary mb-2">Submit</button>
     </div>
   </div>
 
 </form>
-<button (click)="getSingleRoom()" type="button" class="btn btn-primary mb-2"></button>
 <app-list-of-rooms [listOfRooms]=data></app-list-of-rooms>
+</div>
+</div>
+</div>
+
 

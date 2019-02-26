@@ -22,7 +22,7 @@ export class RoomService {
     return this.http.get<Room>('https://hotelapi-backend.herokuapp.com/api/roomdto/test1');
   }
 
-  getSingleRoom(id: number): Observable<SingleRoom>{
+  getSingleRoom(id: number): Observable<SingleRoom> {
     return this.http.get<SingleRoom>(`http://localhost:4200/api/room/id/${id}`);
   }
 
@@ -34,4 +34,5 @@ export class RoomService {
 
 
   }
+
 }

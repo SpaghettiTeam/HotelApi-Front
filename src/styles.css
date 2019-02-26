@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 body{
-  background-color: rgb(86, 90, 94);
+  background-color: rgb(40, 42, 44);
+}
+html {
+  position: relative;
+  min-height: 100%;
+
 }
